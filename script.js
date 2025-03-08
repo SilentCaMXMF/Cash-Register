@@ -3,6 +3,8 @@ const cashInput = document.getElementById("cash");
 const purchaseBtn = document.getElementById("purchase-btn");
 const changeDueElement = document.getElementById("change-due");
 
+let price = [];
+
 let cid = [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
@@ -13,7 +15,7 @@ let cid = [
   ["TEN", 20],
   ["TWENTY", 60],
   ["ONE HUNDRED", 100],
-];
+]
 
 const currencyUnits = {
   "PENNY": 0.01,
@@ -48,7 +50,7 @@ const checkCashRegister = (price, cash, cid) => {
     return;
   }
 
-  const change = [];
+  let change = [];
   let remainingChange = changeDue;
 
   cid.reverse().forEach(([unit, amount]) => {
